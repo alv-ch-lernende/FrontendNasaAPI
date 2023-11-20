@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SuchButtonComponent } from './component/such-button/such-button.component';
 import { LandingPageComponent } from './component/landing-page/landing-page.component';
+import { MarsImageDownComponent } from './component/mars-image-down/mars-image-down.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SuchButtonComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    MarsImageDownComponent
   ],
   imports: [
     BrowserModule,
