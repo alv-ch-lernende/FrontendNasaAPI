@@ -1,0 +1,15 @@
+.topBar{
+  background: #ff6a47;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7vh;
+  min-height: 50px;
+}
+
+.topBarText{
+  color: #101010;
+  background: #ff6a47;
+  overflow: hidden;
+  font-family: Arial;
+}
