@@ -3,12 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SuchButtonComponent } from './component/such-button/such-button.component';
+import { SuchButtonComponent } from './component/notAPage/such-button/such-button.component';
 import { LandingPageComponent } from './component/landing-page/landing-page.component';
-import { MarsImageDownComponent } from './component/mars-image-down/mars-image-down.component';
+import { MarsImageDownComponent } from './component/notAPage/mars-image-down/mars-image-down.component';
 import {NgOptimizedImage} from "@angular/common";
-import { FutterComponent } from './component/futter/futter.component';
+import { FutterComponent } from './component/notAPage/futter/futter.component';
 import { SearchPageComponent } from './component/search-page/search-page.component';
+import { HeaderComponent } from './component/notAPage/header/header.component';
+import { FilterBoxComponent } from './component/notAPage/filter-box/filter-box.component';
+import { ImageBoxComponent } from './component/notAPage/image-box/image-box.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { SearchPageComponent } from './component/search-page/search-page.compone
     LandingPageComponent,
     MarsImageDownComponent,
     FutterComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    HeaderComponent,
+    FilterBoxComponent,
+    ImageBoxComponent
   ],
   imports: [
     BrowserModule,
