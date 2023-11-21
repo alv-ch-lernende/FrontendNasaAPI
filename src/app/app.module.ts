@@ -8,6 +8,7 @@ import { LandingPageComponent } from './component/landing-page/landing-page.comp
 import { MarsImageDownComponent } from './component/mars-image-down/mars-image-down.component';
 import {NgOptimizedImage} from "@angular/common";
 import { FutterComponent } from './component/futter/futter.component';
+import { SearchPageComponent } from './component/search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FutterComponent } from './component/futter/futter.component';
     SuchButtonComponent,
     LandingPageComponent,
     MarsImageDownComponent,
-    FutterComponent
+    FutterComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,
