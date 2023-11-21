@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SuchButtonComponent } from './component/such-button/such-button.component';
 import { LandingPageComponent } from './component/landing-page/landing-page.component';
 import { MarsImageDownComponent } from './component/mars-image-down/mars-image-down.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MarsImageDownComponent } from './component/mars-image-down/mars-image-d
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

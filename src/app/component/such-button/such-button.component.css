@@ -3,6 +3,8 @@
   color: #101010;
   height: 5vh;
   width: 10vw;
+  min-height: 50px;
+  min-width: 100px;
   border: none;
   font-family: "Arial Black";
   font-size: 16px;
