@@ -7,13 +7,15 @@ import { SuchButtonComponent } from './component/such-button/such-button.compone
 import { LandingPageComponent } from './component/landing-page/landing-page.component';
 import { MarsImageDownComponent } from './component/mars-image-down/mars-image-down.component';
 import {NgOptimizedImage} from "@angular/common";
+import { FutterComponent } from './component/futter/futter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SuchButtonComponent,
     LandingPageComponent,
-    MarsImageDownComponent
+    MarsImageDownComponent,
+    FutterComponent
   ],
   imports: [
     BrowserModule,
