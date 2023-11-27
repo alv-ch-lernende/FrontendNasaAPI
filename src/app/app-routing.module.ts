@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'search',
     component: SearchPageComponent
+  },
+  {
+    path: '**',
+    component: LandingPageComponent
   }
 ];
 

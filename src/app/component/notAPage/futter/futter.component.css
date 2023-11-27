@@ -1,36 +1,17 @@
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .topBar{
   background: #ff6a47;
+  width: 98.8vw;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 7vh;
-  width: 100%;
-  min-height: 50px;
-  min-width: 100px;
-  margin-bottom: 10vh;
 }
 
-.roverimage{
-  width: 50vw;
-  mask-image: linear-gradient(to top, transparent, black);
-
-
+p{
+  color: #101010;
+  font-family: Arial;
 }
 
 h3{
-  color: #fdfdfd;
-  font-family: "Arial Black";
-}
-
-.topBarText{
   color: #101010;
-  background: #ff6a47;
-  overflow: hidden;
   font-family: Arial;
 }

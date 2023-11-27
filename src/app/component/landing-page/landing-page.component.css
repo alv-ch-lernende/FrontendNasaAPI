@@ -4,6 +4,10 @@ body{
   align-items: center;
 }
 
+
+
+
+
 .topBar{
   background: #ff6a47;
   display: flex;
@@ -17,11 +21,11 @@ body{
 }
 
 .roverimage{
-  width: 50vw;
-  mask-image: linear-gradient(to top, transparent, black);
-
-
+  width: 98.8vw;
+  mask-image: linear-gradient(to bottom, transparent, transparent 55%, black);
 }
+
+
 
 h3{
   color: #fdfdfd;

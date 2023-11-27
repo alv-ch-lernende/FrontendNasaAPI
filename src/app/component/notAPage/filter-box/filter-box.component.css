@@ -1,0 +1,16 @@
+.checkbox{
+color: #101010;
+  font-family: Arial;
+  font-size: 3vh;
+
+
+}
+
+.filter{
+  margin-left: 5vw;
+  background: #ff6a47;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+}

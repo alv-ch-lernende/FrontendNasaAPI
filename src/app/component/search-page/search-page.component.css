@@ -3,4 +3,7 @@ p{
   font-family: Arial;
 }
 
+.filterAndImageBox{
+  display: flex;
+}
 
