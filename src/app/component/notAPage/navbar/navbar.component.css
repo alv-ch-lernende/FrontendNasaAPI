@@ -1,0 +1,21 @@
+.navBarDiv{
+  background: #ff6a47;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4vh;
+}
+
+.navBackButton{
+  height: 4vh;
+  margin: 1vw;
+  width: 4vw;
+  background: #101010;
+  border: none;
+  color: #fdfdfd;
+}
+.navBackButton:hover{
+opacity: 80%}
+
+.navBarTitle{
+  font-family: Arial;
+}
