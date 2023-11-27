@@ -1,7 +1,7 @@
 .checkbox{
 color: #101010;
   font-family: Arial;
-  font-size: 3vh;
+  font-size: 2vh;
 
 
 }
@@ -11,6 +11,45 @@ color: #101010;
   background: #ff6a47;
   height: 80vh;
   display: flex;
+  padding: 1vh;
+  overflow: hidden;
   flex-direction: column;
   width: 15vw;
+}
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333; /* Schwarzer Text */
+}
+
+.checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox:checked {
+  background-color: #333; /* Schwarzer Hintergrund im ausgewählten Zustand */
+  border: 2px solid #333; /* Schwarzer Rand im ausgewählten Zustand */
+}
+
+.checkbox::before {
+  content: '\2713';
+  font-size: 12px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.checkbox:checked::before {
+  transform: translate(-50%, -50%) scale(1);
 }
