@@ -23,7 +23,7 @@ export class SearchPageComponent implements OnInit {
     );
   }
 
-  crateImageBox(img){
+  crateImageBox(){
 
   }
 
