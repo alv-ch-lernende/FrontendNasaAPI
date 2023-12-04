@@ -3,12 +3,16 @@
   display: flex;
   align-items: center;
   margin-bottom: 4vh;
+  min-height: 100px;
+  min-width: 1070px;
 }
 
 .navBackButton{
   height: 4vh;
   margin: 1vw;
   width: 4vw;
+  min-width: 50px;
+  min-height: 10px;
   background: #101010;
   border: none;
   color: #fdfdfd;
