@@ -15,7 +15,6 @@ import { HeaderComponent } from './component/notAPage/header/header.component';
 import { FilterBoxComponent } from './component/notAPage/filter-box/filter-box.component';
 import { ImageBoxComponent } from './component/notAPage/image-box/image-box.component';
 import { NavbarComponent } from './component/notAPage/navbar/navbar.component';
-import { ImageServiceComponent } from './component/service/müll/image-service.component';
 import { ImageboxComponent } from './component/notAPage/imagebox/imagebox.component';
 
 @NgModule({
@@ -30,7 +29,6 @@ import { ImageboxComponent } from './component/notAPage/imagebox/imagebox.compon
     FilterBoxComponent,
     ImageBoxComponent,
     NavbarComponent,
-    ImageServiceComponent,
     ImageboxComponent,
   ],
   imports: [

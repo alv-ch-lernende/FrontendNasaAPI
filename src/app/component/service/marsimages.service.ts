@@ -1,12 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-
-class ImageDTO {
-  // imageUrl: string;
-  // otherProperty: string;
-}
+import {allMarsImages} from "./marsImage-repository.service";
 
 class ApiResponse {
 }
@@ -18,7 +13,7 @@ export class MarsimagesService {
 
   constructor(private http: HttpClient) {}
 
-  getImages(): Observable<any[]> {
-    return this.http.get<any[]>(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY`);
+  getImages(): Observable<allMarsImages> {
+    return this.http.get<allMarsImages>(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=M40mlyyCKEpb1QvJGpkyF0MulpTr7NOaJdkhUUTa`);
   }
 }

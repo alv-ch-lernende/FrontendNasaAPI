@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MarsimagesService} from '../service/marsimages.service';
+import {marsImage} from "../service/marsImage-repository.service";
 
 @Component({
   selector: 'app-search-page',
@@ -8,18 +9,20 @@ import {MarsimagesService} from '../service/marsimages.service';
 })
 export class SearchPageComponent implements OnInit {
 
-  marsImages: any[] | undefined; // Typisiere dies entsprechend den erwarteten Daten
-
-
+  marsImageResult: marsImage[] = [];
 
   constructor(private marsService: MarsimagesService) {
   }
 
   ngOnInit() {
+    this.reload()
+  }
+
+  public reload(){
     this.marsService.getImages().subscribe(
       (images) => {
-        this.marsImages = images;
-        console.log("Das sind dieImages:",images)
+        this.marsImageResult = images.photos;
+        console.log(images.photos[0])
       },
       (error) => {
         console.error('Error fetching Mars images:', error);
@@ -27,14 +30,6 @@ export class SearchPageComponent implements OnInit {
     );
   }
 
-  // createImageBox(imageURL: string) {
-  //   const imageBox = document.createElement("div");
-  //   const imageElement = document.createElement("img");
-  //
-  //   imageElement.src = imageURL;
-  //   imageBox.appendChild(imageElement);
-  //   document.appendChild(imageBox)
-  // }
 
 
 }
