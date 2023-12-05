@@ -7,7 +7,10 @@ import {MarsimagesService} from '../service/marsimages.service';
   styleUrls: ['./search-page.component.css']
 })
 export class SearchPageComponent implements OnInit {
+
   marsImages: any[] | undefined; // Typisiere dies entsprechend den erwarteten Daten
+
+
 
   constructor(private marsService: MarsimagesService) {
   }
@@ -24,14 +27,14 @@ export class SearchPageComponent implements OnInit {
     );
   }
 
-  createImageBox(imageURL: string) {
-    const imageBox = document.createElement("div");
-    const imageElement = document.createElement("img");
-
-    imageElement.src = imageURL;
-    imageBox.appendChild(imageElement);
-    document.appendChild(imageBox)
-  }
+  // createImageBox(imageURL: string) {
+  //   const imageBox = document.createElement("div");
+  //   const imageElement = document.createElement("img");
+  //
+  //   imageElement.src = imageURL;
+  //   imageBox.appendChild(imageElement);
+  //   document.appendChild(imageBox)
+  // }
 
 
 }
