@@ -24,7 +24,6 @@ export class ImageBoxComponent {
     let imageDiv = document.getElementById("image-gox-box")
     imageElement.src = imageURL;
     imageBox.appendChild(imageElement);
-    imageDiv.appendChild(imageBox);
 
   }
 
