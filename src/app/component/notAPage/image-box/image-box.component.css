@@ -8,3 +8,12 @@
   background: #ff6a47;
   font-family: Arial;
 }
+
+.ImageElement{
+  height: 100px;
+  width: 100px;
+}
+.ImageBox{
+  height: 100px;
+  width: 100px;
+}
