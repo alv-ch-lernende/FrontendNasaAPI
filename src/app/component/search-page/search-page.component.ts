@@ -22,7 +22,9 @@ export class SearchPageComponent implements OnInit {
     this.marsService.getImages().subscribe(
       (images) => {
         this.marsImageResult = images.photos;
-        console.log(images.photos[0])
+        for (let i = 0; i < images.photos.length; i++) {
+          console.log(images.photos[i].img_src)
+        }
       },
       (error) => {
         console.error('Error fetching Mars images:', error);
