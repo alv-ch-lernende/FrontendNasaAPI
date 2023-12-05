@@ -1,30 +1,13 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {marsImage} from "../../service/marsImage-repository.service";
 import {MarsimagesService} from "../../service/marsimages.service";
-
-function createImage(imageURL: string) {
-  const imageBox = document.createElement('div');
-  const imageElement = document.createElement('img');
-  let imageDiv = document.getElementById("image-gox-box")
-
-  imageElement.src = imageURL;
-  imageBox.appendChild(imageElement);
-
-
-
-  if(imageDiv !== null){
-    imageDiv.appendChild(imageBox)
-    imageElement.classList.add("ImageElement")
-    imageBox.classList.add("ImageBox")
-  }
-}
 
 @Component({
   selector: 'app-image-box',
   templateUrl: './image-box.component.html',
   styleUrls: ['./image-box.component.css']
 })
-export class ImageBoxComponent {
+export class ImageBoxComponent implements OnInit{
   marsImageResult: marsImage[] = [];
 
   constructor(private marsService: MarsimagesService) {
@@ -40,7 +23,7 @@ export class ImageBoxComponent {
       (images) => {
         this.marsImageResult = images.photos;
         for (let i = 0; i < images.photos.length; i++) {
-          createImage(images.photos[i].img_src)
+          // this.createImage(images.photos[i].img_src)
 
         }
       },
@@ -49,6 +32,20 @@ export class ImageBoxComponent {
       }
     );
   }
-
+  // private createImage(imageURL: string) {
+  //   let imageBox = document.createElement('div');
+  //   let imageElement = document.createElement('img');
+  //   let imageDiv = document.getElementById("image-gox-box");
+  //
+  //   imageElement.src = imageURL;
+  //
+  //   imageElement.classList.add("ImageElement");
+  //   imageBox.appendChild(imageElement);
+  //
+  //   if(imageDiv !== null){
+  //     imageBox.classList.add("ImageBox");
+  //     imageDiv.appendChild(imageElement);
+  //   }
+  // }
 
 }

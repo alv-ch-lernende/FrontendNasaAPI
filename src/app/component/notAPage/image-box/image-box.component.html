@@ -1,1 +1,11 @@
-<div class="image-gox-box" id="image-gox-box"></div>
+
+
+<!--<div class="image-gox-box" id="image-gox-box"></div>-->
+<div class="image-gox-box">
+  <ng-container *ngFor="let marsImage of this.marsImageResult">
+    <div class="ImageBox">
+      <img class="ImageElement" src="{{marsImage.img_src}}">
+    </div>
+  </ng-container>
+</div>
+
