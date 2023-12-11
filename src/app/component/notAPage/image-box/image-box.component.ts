@@ -19,7 +19,7 @@ export class ImageBoxComponent implements OnInit {
 
 
   public reload() {
-    this.marsService.getImages().subscribe(
+    this.marsService.getImagesCuriosity().subscribe(
       (images) => {
         this.marsImageResult = images.photos;
         for (let i = 0; i < images.photos.length; i++) {
