@@ -9,7 +9,6 @@ import {MarsimagesService} from "../../service/marsimages.service";
 })
 export class ImageBoxComponent implements OnInit {
   marsImageResult: marsImage[] = [];
-
   constructor(private marsService: MarsimagesService) {
   }
 
@@ -22,8 +21,26 @@ export class ImageBoxComponent implements OnInit {
     this.marsService.getImagesCuriosity().subscribe(
       (images) => {
         this.marsImageResult = images.photos;
-        for (let i = 0; i < images.photos.length; i++) {
-        }
+      },
+      (error) => {
+        console.error('Error fetching Mars images:', error);
+      }
+    );
+
+    this.marsService.getImagesOpportunity().subscribe(
+      (images) => {
+        console.log( images.photos)
+        this.marsImageResult = images.photos;
+      },
+      (error) => {
+        console.error('Error fetching Mars images:', error);
+      }
+    );
+
+    this.marsService.getImagesSpirit().subscribe(
+      (images) => {
+        console.log( images.photos)
+        this.marsImageResult = images.photos;
       },
       (error) => {
         console.error('Error fetching Mars images:', error);
@@ -31,20 +48,5 @@ export class ImageBoxComponent implements OnInit {
     );
   }
 
-  // private createImage(imageURL: string) {
-  //   let imageBox = document.createElement('div');
-  //   let imageElement = document.createElement('img');
-  //   let imageDiv = document.getElementById("image-gox-box");
-  //
-  //   imageElement.src = imageURL;
-  //
-  //   imageElement.classList.add("ImageElement");
-  //   imageBox.appendChild(imageElement);
-  //
-  //   if(imageDiv !== null){
-  //     imageBox.classList.add("ImageBox");
-  //     imageDiv.appendChild(imageElement);
-  //   }
-  // }
 
 }
