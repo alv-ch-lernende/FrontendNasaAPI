@@ -1,1 +1,12 @@
-<p>sortierung works!</p>
+<div class="sortierDiv">
+
+  <div class="dropdown">
+    <button class="dropbtn">{{ selectedOption || 'Select Option' }}</button>
+    <div class="dropdown-content">
+      <a href="#" (click)="onOptionSelected('Option 1')">Oldest date</a>
+      <a href="#" (click)="onOptionSelected('Option 2')">Latest date</a>
+      <a href="#" (click)="onOptionSelected('Option 3')">i'm Batman</a>
+    </div>
+  </div>
+
+</div>

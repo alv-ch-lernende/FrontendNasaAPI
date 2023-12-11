@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./sortierung.component.css']
 })
 export class SortierungComponent {
-
+  selectedOption: string = '';
+  onOptionSelected(option: string): void {
+    this.selectedOption = option;
+    console.log(`Selected Option: ${this.selectedOption}`);
+  }
 }
