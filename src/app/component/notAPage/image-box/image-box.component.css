@@ -1,6 +1,7 @@
 .ImageElement {
   height: 200px;
   display: flex;
+  border: none;
 
 
 }

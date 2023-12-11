@@ -9,18 +9,17 @@ import {MarsimagesService} from "../../service/marsimages.service";
 })
 export class ImageBoxComponent implements OnInit {
   marsImageResult: marsImage[] = [];
-  constructor(private marsService: MarsimagesService) {
-  }
+
+  constructor(private marsService: MarsimagesService) {}
 
   ngOnInit() {
-    this.reload()
+    this.reload();
   }
-
 
   public reload() {
     this.marsService.getImagesCuriosity().subscribe(
       (images) => {
-        this.marsImageResult = images.photos;
+        this.marsImageResult = this.marsImageResult.concat(images.photos);
       },
       (error) => {
         console.error('Error fetching Mars images:', error);
@@ -29,8 +28,8 @@ export class ImageBoxComponent implements OnInit {
 
     this.marsService.getImagesOpportunity().subscribe(
       (images) => {
-        console.log( images.photos)
-        this.marsImageResult = images.photos;
+        console.log(images.photos);
+        this.marsImageResult = this.marsImageResult.concat(images.photos);
       },
       (error) => {
         console.error('Error fetching Mars images:', error);
@@ -39,14 +38,16 @@ export class ImageBoxComponent implements OnInit {
 
     this.marsService.getImagesSpirit().subscribe(
       (images) => {
-        console.log( images.photos)
-        this.marsImageResult = images.photos;
+        console.log(images.photos);
+        this.marsImageResult = this.marsImageResult.concat(images.photos);
       },
       (error) => {
         console.error('Error fetching Mars images:', error);
       }
     );
   }
-
-
 }
+
+
+
+
