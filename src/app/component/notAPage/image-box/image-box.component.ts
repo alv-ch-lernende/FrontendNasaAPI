@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {marsImage} from "../../service/marsImage-repository.service";
+import {allMarsImages, marsImage} from "../../service/marsImage-repository.service";
 import {MarsimagesService} from "../../service/marsimages.service";
 
 @Component({
@@ -7,7 +7,7 @@ import {MarsimagesService} from "../../service/marsimages.service";
   templateUrl: './image-box.component.html',
   styleUrls: ['./image-box.component.css']
 })
-export class ImageBoxComponent implements OnInit{
+export class ImageBoxComponent implements OnInit {
   marsImageResult: marsImage[] = [];
 
   constructor(private marsService: MarsimagesService) {
@@ -18,13 +18,11 @@ export class ImageBoxComponent implements OnInit{
   }
 
 
-  public reload(){
+  public reload() {
     this.marsService.getImages().subscribe(
       (images) => {
         this.marsImageResult = images.photos;
         for (let i = 0; i < images.photos.length; i++) {
-          // this.createImage(images.photos[i].img_src)
-
         }
       },
       (error) => {
@@ -32,6 +30,7 @@ export class ImageBoxComponent implements OnInit{
       }
     );
   }
+
   // private createImage(imageURL: string) {
   //   let imageBox = document.createElement('div');
   //   let imageElement = document.createElement('img');

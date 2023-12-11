@@ -1,5 +1,6 @@
 .ImageElement {
   height: 200px;
+  display: flex;
 
 
 }
@@ -8,8 +9,11 @@
   margin: 10px;
   background: #333333;
   min-height: 300px;
-  height: 22.5vh;
   border-radius: 5px;
+}
+
+.roverNameParagraph{
+  width: 5vw;
 }
 
 .image-gox-box {
