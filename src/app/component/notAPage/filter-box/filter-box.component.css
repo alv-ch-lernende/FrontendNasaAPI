@@ -1,28 +1,24 @@
-.checkbox{
-color: #101010;
+.checkbox {
+  color: #101010;
   font-family: Arial;
   font-size: 2vh;
-
-
 }
 
-.filter{
+.filter {
   margin-left: 5vw;
   background: #ff6a47;
-  height: 40vh;
-
   display: flex;
   padding: 1vh;
-  overflow: hidden;
   flex-direction: column;
   width: 15vw;
 }
+
 .checkbox-container {
   display: flex;
   align-items: center;
   font-family: Arial, sans-serif;
   font-size: 14px;
-  color: #333; /* Schwarzer Text */
+  color: #333;
 }
 
 .checkbox {
@@ -30,14 +26,15 @@ color: #101010;
   width: 16px;
   height: 16px;
   border-radius: 4px;
+  font-size: 20px;
   outline: none;
   cursor: pointer;
   position: relative;
 }
 
 .checkbox:checked {
-  background-color: #333; /* Schwarzer Hintergrund im ausgewählten Zustand */
-  border: 2px solid #333; /* Schwarzer Rand im ausgewählten Zustand */
+  background-color: #333;
+  border: 2px solid #333;
 }
 
 .checkbox::before {

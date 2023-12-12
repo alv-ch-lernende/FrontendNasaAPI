@@ -11,7 +11,6 @@ import { LandingPageComponent } from './component/landing-page/landing-page.comp
 import { MarsImageDownComponent } from './component/notAPage/mars-image-down/mars-image-down.component';
 import { FutterComponent } from './component/notAPage/futter/futter.component';
 import { SearchPageComponent } from './component/search-page/search-page.component';
-import { HeaderComponent } from './component/notAPage/header/header.component';
 import { FilterBoxComponent } from './component/notAPage/filter-box/filter-box.component';
 import { ImageBoxComponent } from './component/notAPage/image-box/image-box.component';
 import { NavbarComponent } from './component/notAPage/navbar/navbar.component';
@@ -25,7 +24,6 @@ import { SortierungComponent } from './component/notAPage/sortierung/sortierung.
     MarsImageDownComponent,
     FutterComponent,
     SearchPageComponent,
-    HeaderComponent,
     FilterBoxComponent,
     ImageBoxComponent,
     NavbarComponent,

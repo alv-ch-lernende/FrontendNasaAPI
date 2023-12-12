@@ -1,11 +1,6 @@
-
-
 .filterAndImageBox{
   display: flex;
 }
 
-.FilterAndSortingDiv{
-  display: flex;
-  flex-direction: column;
-}
+
 
