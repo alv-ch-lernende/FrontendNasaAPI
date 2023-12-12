@@ -9,48 +9,66 @@ import {MarsimagesService} from "../../service/marsimages.service";
 })
 export class ImageBoxComponent implements OnInit {
   marsImageResult: marsImage[] = [];
-  sortStyle: "latestDate" | "oldestDate" | "highestResolution" | "lowestResolution" = "latestDate";
+  sortStyle: "latestDate" | "oldestDate" | "highestResolution" | "lowestResolution" = "highestResolution";
 
   constructor(private marsService: MarsimagesService) {
   }
 
   ngOnInit() {
     this.reload();
+    this.sortMarsImageResult(this.sortStyle);
   }
 
   public reload() {
     this.marsService.getImagesCuriosity().subscribe(
       (images) => {
         this.marsImageResult = this.marsImageResult.concat(images.photos);
+        this.marsService.getImagesOpportunity().subscribe(
+          (images) => {
+            this.marsImageResult = this.marsImageResult.concat(images.photos);
+            this.marsService.getImagesSpirit().subscribe(
+              (images) => {
+                this.marsImageResult = this.marsImageResult.concat(images.photos);
+                this.sortMarsImageResult(this.sortStyle);
+              },
+              (error) => {
+                console.error('Error fetching Mars images:', error);
+              }
+            );
+          },
+          (error) => {
+            console.error('Error fetching Mars images:', error);
+          }
+        );
       },
       (error) => {
         console.error('Error fetching Mars images:', error);
       }
     );
 
-    this.marsService.getImagesOpportunity().subscribe(
-      (images) => {
-        this.marsImageResult = this.marsImageResult.concat(images.photos);
-      },
-      (error) => {
-        console.error('Error fetching Mars images:', error);
-      }
-    );
-
-    this.marsService.getImagesSpirit().subscribe(
-      (images) => {
-        this.marsImageResult = this.marsImageResult.concat(images.photos);
-      },
-      (error) => {
-        console.error('Error fetching Mars images:', error);
-      }
-    );
-
-  this.sortMarsImageResult(this.sortStyle);
+    // this.marsService.getImagesOpportunity().subscribe(
+    //   (images) => {
+    //     this.marsImageResult = this.marsImageResult.concat(images.photos);
+    //   },
+    //   (error) => {
+    //     console.error('Error fetching Mars images:', error);
+    //   }
+    // );
+    //
+    // this.marsService.getImagesSpirit().subscribe(
+    //   (images) => {
+    //     this.marsImageResult = this.marsImageResult.concat(images.photos);
+    //   },
+    //   (error) => {
+    //     console.error('Error fetching Mars images:', error);
+    //   }
+    // );
   }
 
   sortMarsImageResult(sortStyle: "latestDate" | "oldestDate" | "highestResolution" | "lowestResolution") {
-    this.sortStyle = sortStyle;
+    if (this.sortStyle != sortStyle){
+      this.sortStyle = sortStyle;
+    }
     switch (this.sortStyle) {
       case "latestDate":
         this.marsImageResult = this.marsImageResult.slice().sort((a , b) => Number(a.id) - Number(b.id));
@@ -60,22 +78,30 @@ export class ImageBoxComponent implements OnInit {
         this.marsImageResult = this.marsImageResult.slice().sort((a , b) => Number(b.id) - Number(a.id));
         break;
 
-      case "highestResolution":
+      // case "highestResolution":
+      //   this.marsImageResult = this.marsImageResult.slice().sort((a , b) => this.calculateImageResolution(a.img_src) - this.calculateImageResolution(b.img_src));
+      //   break;
 
-        this.marsImageResult = this.marsImageResult.slice().sort((a , b) => this.calculateImageResolution(a.img_src) - this.calculateImageResolution(b.img_src));
-        break;
-
-      case "lowestResolution":
-        this.marsImageResult = this.marsImageResult.slice().sort((a , b) => this.calculateImageResolution(b.img_src) - this.calculateImageResolution(a.img_src));
-        break;
+    //   case "lowestResolution":
+    //     this.marsImageResult = this.marsImageResult.slice().sort((a , b) => {
+    //       this.calculateImageResolution(b.img_src).then(value1 => { this.calculateImageResolution(a.img_src).then(value2 => {
+    //         return value1 - value2;
+    //       })
+    //       });
+    //     })
+    //     break;
     }
   }
 
-  calculateImageResolution(imageLink: string): number {
-    const img = new Image();
-    img.src = imageLink;
-    return img.width * img.height;
-  }
+  // async calculateImageResolution(imageLink: string) {
+  //   const img = new Image();
+  //   img.src = imageLink;
+  //   var x = img.onload = function () {
+  //     return img.width * img.height;
+  //   }
+  //   return x;
+  //
+  // }
 
 }
 
