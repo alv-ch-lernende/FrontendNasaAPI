@@ -9,6 +9,6 @@ export class SortierungComponent {
   selectedOption: string = '';
   onOptionSelected(option: string): void {
     this.selectedOption = option;
-    console.log(`Selected Option: ${this.selectedOption}`);
+    console.log('Selected Option:', this.selectedOption);
   }
 }
