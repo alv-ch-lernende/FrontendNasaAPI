@@ -1,10 +1,12 @@
 
-  <div class="dropdown">
+<p>{{thisVar}}</p>
+<div class="dropdown">
     <button class="dropbtn">{{ selectedOption || 'Select Option' }}</button>
     <div class="dropdown-content">
-      <a  (click)="onOptionSelected('Oldest date')">Oldest date</a>
-      <a  (click)="onOptionSelected('Latest date')">Latest date</a>
-      <a  (click)="onOptionSelected('i\'m Supperman')">i'm Supperman</a>
+      <a (click)="onOptionSelected('Oldest image')">Oldest date</a>
+      <a (click)="onOptionSelected('Latest image')">Latest date</a>
+      <a (click)="onOptionSelected('i\'m Supperman')">i'm Supperman</a>
+      <a (click)="dropDownClicked('i\'m Supperman')">i'm Supperman</a>
     </div>
   </div>
 

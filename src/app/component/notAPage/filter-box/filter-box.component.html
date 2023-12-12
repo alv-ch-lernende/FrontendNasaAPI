@@ -21,6 +21,8 @@
     <label for="NewestDate" class="checkbox">newest date</label>
   </div>
 
-  <app-sortierung></app-sortierung>
+  <p>{{message}}</p>
+
+  <app-sortierung [thisVar]="'Sortierung:'" (dropdownItemSelected)="callMe($event)"></app-sortierung>
 </div>
 

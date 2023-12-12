@@ -28,7 +28,6 @@ export class ImageBoxComponent implements OnInit {
 
     this.marsService.getImagesOpportunity().subscribe(
       (images) => {
-        console.log(images.photos);
         this.marsImageResult = this.marsImageResult.concat(images.photos);
       },
       (error) => {
@@ -38,13 +37,15 @@ export class ImageBoxComponent implements OnInit {
 
     this.marsService.getImagesSpirit().subscribe(
       (images) => {
-        console.log(images.photos);
         this.marsImageResult = this.marsImageResult.concat(images.photos);
       },
       (error) => {
         console.error('Error fetching Mars images:', error);
       }
     );
+  }
+  sortedOldest(imageList: any[]){
+
   }
 }
 
