@@ -1,28 +1,47 @@
 <div class="filter">
   <h2>Filter:</h2>
-  <div>
-    <input type="checkbox" id="Rover 1"  checked class="checkbox"/>
-    <label for="Rover 1" class="checkbox">Rover 1</label>
-  </div>
-  <div>
-    <input type="checkbox" id="Rover 2"  checked class="checkbox"/>
-    <label for="Rover 2" class="checkbox">Rover 2</label>
-  </div>
-  <div>
-    <input type="checkbox" id="Rover 3"  checked class="checkbox"/>
-    <label for="Rover 3" class="checkbox">Rover 3</label>
-  </div>
-  <div>
-    <input type="checkbox" id="Rover 4"  checked class="checkbox"/>
-    <label for="Rover 4" class="checkbox">Rover 4</label>
-  </div>
-  <div>
-    <input type="checkbox" id="NewestDate"  checked class="checkbox"/>
-    <label for="NewestDate" class="checkbox">newest date</label>
-  </div>
+  <form [formGroup]="filterForm">
+    <label>
+      Opportunity Rover
+      <input type="checkbox" formControlName="opportunityRover">
+    </label> <br>
+    <label>
+      Curiosity Rover
+      <input type="checkbox" formControlName="curiosityRover">
+    </label> <br>
+    <label>
+      Spirit Rover
+      <input type="checkbox" formControlName="spiritRover">
+    </label> <br>
+    <label>
+      Sol
+      <input type="number" formControlName="solInput">
+    </label> <br>
+    <div *ngIf="!filterForm.valid">
+      pip
+    </div>
+  </form>
 
-  <p>{{message}}</p>
-
-  <app-sortierung [thisVar]="'Sortierung:'" (dropdownItemSelected)="callMe($event)"></app-sortierung>
 </div>
+
+
+<!--<div class="filter">-->
+<!--  <h2>Filter:</h2>-->
+<!--  <div>-->
+<!--    <input type="checkbox" id="curiosity"  checked  class="checkbox"/>-->
+<!--    <label for="curiosity" class="checkbox">Rover 1</label>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <input type="checkbox" id="opportunity"  checked class="checkbox"/>-->
+<!--    <label for="opportunity" class="checkbox">Rover 2</label>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <input type="checkbox" id="spirit"  checked class="checkbox"/>-->
+<!--    <label for="spirit" class="checkbox">Rover 3</label>-->
+<!--  </div>-->
+
+<!--  <h2>Sorting</h2>-->
+<!--  <app-sortierung [thisVar]="'Sortierung:'"></app-sortierung>-->
+
+<!--</div>-->
 

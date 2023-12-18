@@ -15,6 +15,7 @@ import { FilterBoxComponent } from './component/notAPage/filter-box/filter-box.c
 import { ImageBoxComponent } from './component/notAPage/image-box/image-box.component';
 import { NavbarComponent } from './component/notAPage/navbar/navbar.component';
 import { SortierungComponent } from './component/notAPage/sortierung/sortierung.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,12 +30,13 @@ import { SortierungComponent } from './component/notAPage/sortierung/sortierung.
     NavbarComponent,
     SortierungComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    NgOptimizedImage
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        NgOptimizedImage,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

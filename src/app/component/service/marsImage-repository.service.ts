@@ -1,4 +1,4 @@
-export interface marsImage{
+export interface marsImage {
   id: string;
   img_src: string;
   rover: rover;
@@ -6,11 +6,18 @@ export interface marsImage{
 
 }
 
-export interface allMarsImages{
+export interface allMarsImages {
   photos: marsImage[];
 }
 
-export  interface rover{
+export interface rover {
   id: string;
   name: string;
+}
+
+export interface filter {
+  curiosityRover: boolean
+  opportunityRover: boolean
+  solInput: boolean
+  spiritRover: boolean
 }

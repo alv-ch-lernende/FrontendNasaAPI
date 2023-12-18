@@ -10,15 +10,7 @@ export class SortierungComponent {
   @Input()
   thisVar = '';
 
-  @Output()
-  dropdownItemSelected = new EventEmitter<string>();
-
   selectedOption: string = '';
-
-
-  dropDownClicked(message:string){
-    this.dropdownItemSelected.emit(message);
-  }
 
 
   onOptionSelected(option: string): void {
