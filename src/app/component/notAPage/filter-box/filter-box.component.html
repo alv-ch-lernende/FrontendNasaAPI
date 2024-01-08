@@ -3,19 +3,19 @@
   <form [formGroup]="filterForm">
     <label>
       Opportunity Rover
-      <input type="checkbox" formControlName="opportunityRover">
+      <input type="checkbox" id="opportunity" formControlName="opportunityRover" class="filter">
     </label> <br>
     <label>
       Curiosity Rover
-      <input type="checkbox" formControlName="curiosityRover">
+      <input type="checkbox" id="curiosity" formControlName="curiosityRover" class="filter">
     </label> <br>
     <label>
       Spirit Rover
-      <input type="checkbox" formControlName="spiritRover">
+      <input type="checkbox" id="spirit" formControlName="spiritRover" class="filter">
     </label> <br>
     <label>
       Sol
-      <input type="number" formControlName="solInput">
+      <input type="number" formControlName="solInput" >
     </label> <br>
     <div *ngIf="!filterForm.valid">
       pip
@@ -24,24 +24,4 @@
 
 </div>
 
-
-<!--<div class="filter">-->
-<!--  <h2>Filter:</h2>-->
-<!--  <div>-->
-<!--    <input type="checkbox" id="curiosity"  checked  class="checkbox"/>-->
-<!--    <label for="curiosity" class="checkbox">Rover 1</label>-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <input type="checkbox" id="opportunity"  checked class="checkbox"/>-->
-<!--    <label for="opportunity" class="checkbox">Rover 2</label>-->
-<!--  </div>-->
-<!--  <div>-->
-<!--    <input type="checkbox" id="spirit"  checked class="checkbox"/>-->
-<!--    <label for="spirit" class="checkbox">Rover 3</label>-->
-<!--  </div>-->
-
-<!--  <h2>Sorting</h2>-->
-<!--  <app-sortierung [thisVar]="'Sortierung:'"></app-sortierung>-->
-
-<!--</div>-->
 

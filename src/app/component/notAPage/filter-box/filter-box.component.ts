@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {debounceTime, distinctUntilChanged} from "rxjs";
+import {debounceTime} from "rxjs";
+// import {reload} from '../image-box'
 
 @Component({
   selector: 'app-filter-box',
@@ -23,13 +24,15 @@ export class FilterBoxComponent implements OnInit {
     this.filterForm.valueChanges.pipe(
       debounceTime(500)).subscribe(value => {
       if (this.filterForm.valid) {
-        console.log(this.filterForm.value)
+        // this.reload(wichBoxCheckt());
+
+
       }
     })
   }
-
-
 }
+
+
 
 export function wichBoxCheckt() {
   let boxNames: string[] = ["curiosity", "opportunity", "spirit"];
@@ -37,10 +40,9 @@ export function wichBoxCheckt() {
   for (let i = 0; i < boxNames.length; i++) {
     var element = <HTMLInputElement>document.getElementById(boxNames[i]);
     var isChecked = element.checked;
-
     if (isChecked === true) {
+      console.log("isCheckt is true")
       idsForGetRequest.push(boxNames[i])
-
     }
   }
   return idsForGetRequest;

@@ -1,7 +1,6 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {allMarsImages, filter, marsImage} from "../../service/marsImage-repository.service";
 import {MarsimagesService} from "../../service/marsimages.service";
-import {wichBoxCheckt} from "../filter-box/filter-box.component";
 
 @Component({
   selector: 'app-image-box',
@@ -21,23 +20,25 @@ export class ImageBoxComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.reload();
+    let rovernameAray: string[] = ["curiosity", "opportunity", "spirit"];
+    this.reload(rovernameAray);
   }
 
   ngOnChanges() {
 
   }
+  public reload(rover: any[]) {
+    for (let i = 0; i < rover.length; i++) {
 
-  public reload() {
-    this.marsService.getRoverImages("opportunity").subscribe(
-      (images) => {
-        this.marsImageResult = this.marsImageResult.concat(images.photos);
-      },
-      (error) => {
-        console.error('Error fetching Mars images:', error);
-      }
-    );
-
+      this.marsService.getRoverImages(rover[i]).subscribe(
+        (images) => {
+          this.marsImageResult = this.marsImageResult.concat(images.photos);
+        },
+        (error) => {
+          console.error('Error fetching Mars images:', error);
+        }
+      );
+    }
   }
 
   sortMarsImageResult(sortStyle: "latestDate" | "oldestDate") {

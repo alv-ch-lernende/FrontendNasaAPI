@@ -16,8 +16,8 @@ export interface rover {
 }
 
 export interface filter {
-  curiosityRover: boolean
-  opportunityRover: boolean
-  solInput: boolean
-  spiritRover: boolean
+  curiosityRover: boolean;
+  opportunityRover: boolean;
+  solInput: number;
+  spiritRover: boolean;
 }
