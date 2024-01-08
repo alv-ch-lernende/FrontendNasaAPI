@@ -19,7 +19,7 @@ export class FilterBoxComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void   {
     this.filterForm.valueChanges.pipe(
       debounceTime(500)).subscribe(value => {
       if (this.filterForm.valid) {
