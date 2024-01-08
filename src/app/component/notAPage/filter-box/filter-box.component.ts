@@ -24,7 +24,7 @@ export class FilterBoxComponent implements OnInit {
     this.filterForm.valueChanges.pipe(
       debounceTime(500)).subscribe(value => {
       if (this.filterForm.valid) {
-        // this.reload(wichBoxCheckt());
+        // reload(wichBoxCheckt());
 
 
       }
