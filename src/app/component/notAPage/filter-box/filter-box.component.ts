@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {debounceTime} from "rxjs";
 
@@ -16,16 +16,16 @@ export class FilterBoxComponent implements OnInit {
     solInput: new FormControl(null, Validators.max(13000))
   })
 
+
   constructor() {
   }
 
-  ngOnInit(): void   {
+
+
+  ngOnInit(): void {
     this.filterForm.valueChanges.pipe(
       debounceTime(500)).subscribe(value => {
       if (this.filterForm.valid) {
-        // reload(wichBoxCheckt());
-
-
       }
     })
   }

@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, OnInit} from '@angular/core';
-import {allMarsImages, filter, marsImage} from "../../service/marsImage-repository.service";
+import {filter, marsImage} from "../../service/marsImage-repository.service";
 import {MarsimagesService} from "../../service/marsimages.service";
 
 @Component({
@@ -19,6 +19,7 @@ export class ImageBoxComponent implements OnInit, OnChanges {
   constructor(private marsService: MarsimagesService) {
   }
 
+  @Input() item = '';
   ngOnInit() {
     let rovernameAray: string[] = ["curiosity", "opportunity", "spirit"];
     this.reload(rovernameAray);
