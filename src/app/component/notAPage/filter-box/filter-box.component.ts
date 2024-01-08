@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {debounceTime} from "rxjs";
-// import {reload} from '../image-box'
 
 @Component({
   selector: 'app-filter-box',
