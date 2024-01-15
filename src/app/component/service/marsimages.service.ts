@@ -13,8 +13,8 @@ export class MarsimagesService {
 
   constructor(private http: HttpClient) {}
 
-  getRoverImages(rover: string): Observable<allMarsImages> {
-    return this.http.get<allMarsImages>('https://api.nasa.gov/mars-photos/api/v1/rovers/'+rover+'/photos?sol=42&page=0&api_key=M40mlyyCKEpb1QvJGpkyF0MulpTr7NOaJdkhUUTa');
+  getRoverImages(rover: string, sol: string): Observable<allMarsImages> {
+    return this.http.get<allMarsImages>('https://api.nasa.gov/mars-photos/api/v1/rovers/'+rover+'/photos?sol='+sol+'&page=0&api_key=M40mlyyCKEpb1QvJGpkyF0MulpTr7NOaJdkhUUTa');
   }
 
 }

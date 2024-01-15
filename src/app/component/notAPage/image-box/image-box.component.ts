@@ -36,9 +36,8 @@ export class ImageBoxComponent implements OnInit, OnChanges {
 
   public reload(rover: filter) {
     this.marsImageResult = [];
-
     for (let i = 0; i < rover.checkedRovers.length; i++) {
-      this.marsService.getRoverImages(rover.checkedRovers[i]).subscribe(
+      this.marsService.getRoverImages(rover.checkedRovers[i], rover.solInput).subscribe(
         (images) => {
           this.marsImageResult = this.marsImageResult.concat(images.photos);
           this.marsImageUnsortedResult = this.marsImageResult.slice();
