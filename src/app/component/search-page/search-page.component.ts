@@ -7,11 +7,23 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./search-page.component.css']
 })
 export class SearchPageComponent implements OnInit {
-  ngOnInit(): void {
+  // rovernameAray: string[] = ["curiosity", "opportunity", "spirit"];
+
+  checktRovers: string[] = ["curiosity", "opportunity", "spirit"];
+
+
+  // public filtercalback(rovernameAray: string[]) {
+  //   this.rovernameAray = rovernameAray
+  //   console.log("jop da ist alles gut")
+  // }
+
+  public newFilter(checkedRovers: string[]){
+    this.checktRovers = checkedRovers;
   }
 
 
-
+  ngOnInit(): void {
+  }
 
 
 }

@@ -1,6 +1,8 @@
 <div class="filter">
   <h2>Filter:</h2>
   <form [formGroup]="filterForm">
+
+
     <label>
       Opportunity Rover
       <input type="checkbox" id="opportunity" formControlName="opportunityRover" class="filter">
@@ -15,11 +17,9 @@
     </label> <br>
     <label>
       Sol
-      <input type="number" formControlName="solInput" >
+      <input type="number" formControlName="solInput">
     </label> <br>
-    <div *ngIf="!filterForm.valid">
-      pip
-    </div>
+
   </form>
 </div>
 

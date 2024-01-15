@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
 <div class="filterAndImageBox">
-    <app-filter-box class="app-filter-box"></app-filter-box>
+    <app-filter-box (filterHasChanged)="newFilter($event)" class="app-filter-box"></app-filter-box>
 
-  <app-image-box class="app-image-box">
+  <app-image-box [rovernameAray]="checktRovers" class="app-image-box">
     <img src="" alt="Mars Image">
   </app-image-box>
 </div>

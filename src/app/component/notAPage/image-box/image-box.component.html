@@ -1,6 +1,8 @@
 <div class="image-gox-box">
   <ng-container *ngFor="let marsImage of this.marsImageResult">
     <div class="ImageBox" id="{{marsImage.id}}">
+
+
       <img class="ImageElement"  src="{{marsImage.img_src}}">
       <p class="roverNameParagraph" innerText="Marsrover: {{marsImage.rover.name}}"></p>
       <p class="roverNameParagraph" innerText="Earth date: {{marsImage.earth_date}}" ></p>

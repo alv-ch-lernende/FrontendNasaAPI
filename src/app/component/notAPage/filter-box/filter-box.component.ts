@@ -1,6 +1,7 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {debounceTime} from "rxjs";
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { debounceTime } from "rxjs";
+import { filter } from "../../service/marsImage-repository.service";
 
 @Component({
   selector: 'app-filter-box',
@@ -15,10 +16,12 @@ export class FilterBoxComponent implements OnInit {
     spiritRover: new FormControl(false),
     solInput: new FormControl(null, Validators.max(13000))
   })
+  //
+  // @Input()
+  // public myCallback: Function | undefined;
 
-
-  constructor() {
-  }
+  @Output()
+  filterHasChanged = new EventEmitter<string[]>();
 
 
 
@@ -26,11 +29,13 @@ export class FilterBoxComponent implements OnInit {
     this.filterForm.valueChanges.pipe(
       debounceTime(500)).subscribe(value => {
       if (this.filterForm.valid) {
+        // @ts-ignore
+        // this.myCallback(wichBoxCheckt());
+        this.filterHasChanged.emit(wichBoxCheckt())
       }
     })
   }
 }
-
 
 
 export function wichBoxCheckt() {
@@ -40,11 +45,11 @@ export function wichBoxCheckt() {
     var element = <HTMLInputElement>document.getElementById(boxNames[i]);
     var isChecked = element.checked;
     if (isChecked === true) {
-      console.log("isCheckt is true")
+      console.log("isChecked is true")
       idsForGetRequest.push(boxNames[i])
     }
   }
   return idsForGetRequest;
-}
 
+}
 
