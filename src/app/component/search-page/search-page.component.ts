@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {filter} from "../service/marsImage-repository.service";
 
 
 @Component({
@@ -9,7 +10,7 @@ import {Component, OnInit} from '@angular/core';
 export class SearchPageComponent implements OnInit {
   // rovernameAray: string[] = ["curiosity", "opportunity", "spirit"];
 
-  checktRovers: string[] = ["curiosity", "opportunity", "spirit"];
+  checktRovers: filter | undefined;
 
 
   // public filtercalback(rovernameAray: string[]) {
@@ -17,7 +18,7 @@ export class SearchPageComponent implements OnInit {
   //   console.log("jop da ist alles gut")
   // }
 
-  public newFilter(checkedRovers: string[]){
+  public newFilter(checkedRovers: filter){
     this.checktRovers = checkedRovers;
   }
 
