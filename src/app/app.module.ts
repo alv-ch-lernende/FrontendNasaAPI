@@ -15,6 +15,7 @@ import { ImageBoxComponent } from './component/notAPage/image-box/image-box.comp
 import { NavbarComponent } from './component/notAPage/navbar/navbar.component';
 import { SortierungComponent } from './component/notAPage/sortierung/sortierung.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { ImageDetailPageComponent } from './component/image-detail-page/image-detail-page.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     ImageBoxComponent,
     NavbarComponent,
     SortierungComponent,
+    ImageDetailPageComponent,
   ],
     imports: [
         BrowserModule,
