@@ -44,7 +44,7 @@ export class ImageBoxComponent implements OnInit, OnChanges {
           this.marsImageUnsortedResult = this.marsImageResult.slice();
         },
         (error) => {
-          console.error('Error fetching Mars images:', error);
+          console.error('Error fetching Mars images =', error);
         }
       );
     }
