@@ -3,8 +3,6 @@ import {debounceTime} from 'rxjs/operators';
 import {filter, marsImage} from '../../service/marsImage-repository.service';
 import {MarsimagesService} from '../../service/marsimages.service';
 import {Router} from "@angular/router";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {ModalWindowImageComponent} from "../modal-window-image/modal-window-image.component";
 
 @Component({
   selector: 'app-image-box',
@@ -26,9 +24,7 @@ export class ImageBoxComponent implements OnInit, OnChanges {
     }
   }
 
-  constructor(private marsService: MarsimagesService,
-              private router: Router,
-              private modalService: NgbModal) {
+  constructor(private marsService: MarsimagesService, private router: Router) {
   }
 
   ngOnInit() {
@@ -54,7 +50,10 @@ export class ImageBoxComponent implements OnInit, OnChanges {
     }
   }
 
-  public onImageclick() {
-    this.modalService.open(ModalWindowImageComponent, {size: 'xl'})
+  public onImageclick(){
+
+    this.router.navigate(['/image-detail-page']);
+
   }
 }
+
