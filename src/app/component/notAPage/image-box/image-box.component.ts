@@ -2,6 +2,7 @@ import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core'
 import {debounceTime} from 'rxjs/operators';
 import {filter, marsImage} from '../../service/marsImage-repository.service';
 import {MarsimagesService} from '../../service/marsimages.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-image-box',
@@ -23,7 +24,7 @@ export class ImageBoxComponent implements OnInit, OnChanges {
     }
   }
 
-  constructor(private marsService: MarsimagesService) {
+  constructor(private marsService: MarsimagesService, private router: Router) {
   }
 
   ngOnInit() {
@@ -48,4 +49,11 @@ export class ImageBoxComponent implements OnInit, OnChanges {
       );
     }
   }
+
+  public onImageclick(){
+
+    this.router.navigate(['/image-detail-page']);
+
+  }
 }
+

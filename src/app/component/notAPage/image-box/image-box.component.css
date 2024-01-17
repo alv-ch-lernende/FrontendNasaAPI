@@ -2,8 +2,16 @@
   height: 200px;
   display: flex;
   border: none;
+}
 
-
+.ImageDetailPage{
+  background-color: #ff6a47;
+  border: none;
+  height: 2.5vh;
+  width: 5vw;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-family: "Arial Black";
 }
 
 .ImageBox {
@@ -11,6 +19,11 @@
   background: #333333;
   min-height: 300px;
   border-radius: 5px;
+}
+
+.ImageDetailPage:hover{
+  background-color: #ff9880;
+
 }
 
 .roverNameParagraph{
