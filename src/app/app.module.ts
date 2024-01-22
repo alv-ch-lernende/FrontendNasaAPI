@@ -15,7 +15,8 @@ import { ImageBoxComponent } from './component/notAPage/image-box/image-box.comp
 import { NavbarComponent } from './component/notAPage/navbar/navbar.component';
 import { SortierungComponent } from './component/notAPage/sortierung/sortierung.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import { ModalWindowImageComponent } from './component/notAPage/modal-window-image/modal-window-image.component';
+import { ModalComponent } from './component/service/modal/modal.component';
+import { MyModalComponent } from './component/my-modal/my-modal.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ModalWindowImageComponent } from './component/notAPage/modal-window-ima
     ImageBoxComponent,
     NavbarComponent,
     SortierungComponent,
-    ModalWindowImageComponent,
+    ModalComponent,
+    MyModalComponent,
   ],
     imports: [
         BrowserModule,

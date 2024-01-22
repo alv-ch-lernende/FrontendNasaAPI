@@ -1,8 +1,13 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {debounceTime} from 'rxjs/operators';
 import {filter, marsImage} from '../../service/marsImage-repository.service';
 import {MarsimagesService} from '../../service/marsimages.service';
 import {Router} from "@angular/router";
+// @ts-ignore
+import { MatDialog } from '@angular/material/dialog';
+
+// @ts-ignore
+import { MyModalComponent } from './my-modal/my-modal.component';
+
 
 @Component({
   selector: 'app-image-box',
@@ -20,11 +25,10 @@ export class ImageBoxComponent implements OnInit, OnChanges {
     if (changes['rovernameAray'] && !changes['rovernameAray'].firstChange) {
       const newRovernameAray = changes['rovernameAray'].currentValue;
       this.reload(newRovernameAray);
-      console.log(newRovernameAray, "jaaaaaaaaaaaaaaaaaaaaaaa")
     }
   }
 
-  constructor(private marsService: MarsimagesService, private router: Router) {
+  constructor(private marsService: MarsimagesService, private router: Router, private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -54,6 +58,17 @@ export class ImageBoxComponent implements OnInit, OnChanges {
 
     this.router.navigate(['/image-detail-page']);
 
+  }
+
+  openModal(): void {
+    const dialogRef = this.dialog.open(MyModalComponent, {
+      width: '400px', // Passen Sie die Breite nach Bedarf an
+    });
+
+    // Sie können auf Ereignisse des Modalfensters reagieren, z.B. wenn es geschlossen wird
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('Das Modalfenster wurde geschlossen');
+    });
   }
 }
 
