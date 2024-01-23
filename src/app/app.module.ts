@@ -17,6 +17,7 @@ import { SortierungComponent } from './component/notAPage/sortierung/sortierung.
 import {ReactiveFormsModule} from "@angular/forms";
 import { ModalComponent } from './component/service/modal/modal.component';
 import { MyModalComponent } from './component/my-modal/my-modal.component';
+import { ImagePopupComponent } from './component/image-popup/image-popup.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,8 @@ import { MyModalComponent } from './component/my-modal/my-modal.component';
     SortierungComponent,
     ModalComponent,
     MyModalComponent,
+    ImagePopupComponent,
+
   ],
     imports: [
         BrowserModule,

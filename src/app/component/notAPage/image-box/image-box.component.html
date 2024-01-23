@@ -5,8 +5,8 @@
       <img class="ImageElement"  src="{{marsImage.img_src}}">
       <p class="roverNameParagraph" innerText="Marsrover: {{marsImage.rover.name}}"></p>
       <p class="roverNameParagraph" innerText="Earth date: {{marsImage.earth_date}}" ></p>
-      <button (click)="openModal()" class="ImageDetailPage">Go To</button>
-
+      <button (click)="openImagePopup(marsImage.img_src)"  class="ImageDetailPage">Go To</button>
+      <app-image-popup *ngIf="modalService.isModalOpen()" [imageUrl]="modalService.getImageUrl()"></app-image-popup>
     </div>
   </ng-container>
 </div>
